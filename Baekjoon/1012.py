@@ -18,7 +18,7 @@ for _ in range(T):
   M, N, K = map(int, sys.stdin.readline().split())
   result = 0
   s = [[0] * N for _ in range(M)]
-  print(s)
+
   for _ in range(K):
     x, y = map(int, sys.stdin.readline().split())
     s[x][y] = 1
