@@ -1,11 +1,8 @@
 import sys
 
 N, K = map(int, sys.stdin.readline().split())
-
-s = [[0, 0]]
-for _ in range(N):
-  s.append(list(map(int, sys.stdin.readline().split())))
-
+s = [list(map(int, sys.stdin.readline().split())) for _ in range(N)]
+s.insert(0, [0, 0])
 dp = [[0] * (K + 1) for _ in range(N+1)]
 
 for i in range(1, N+1):
