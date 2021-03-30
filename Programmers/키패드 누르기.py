@@ -17,7 +17,7 @@ def solution(numbers, hand):
             
             l = abs(pl[0] - 1) + abs(pl[1] - idx)
             r = abs(pr[0] - 1) + abs(pr[1] - idx)
-            print('abs', idx, l, r)
+           
             if l == r:
                 if hand == 'right':
                     answer += 'R'
