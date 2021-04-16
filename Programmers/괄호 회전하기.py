@@ -18,8 +18,7 @@ def check(s):
         
 def solution(s):
     answer = check(s)
-    for i in range(len(s)-1):
-        first = s[0]
+    for _ in range(len(s)-1):
         s = s[1:] + s[0]
         answer += check(s)
         
