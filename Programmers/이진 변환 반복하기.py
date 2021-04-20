@@ -11,5 +11,3 @@ def solution(s):
         s = bin(len(n))[2:]
         
     return answer
-
-solution('110010101001')
