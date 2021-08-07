@@ -27,9 +27,9 @@ def solution(n, s, a, b, fares):
  
     answer = dijkstra(graph, s-1, a-1) + dijkstra(graph, s-1, b-1)
     answer = INF
-    for i, j, cost in fares:
-        graph[i-1].append((cost, j-1))
-        graph[j-1].append((cost, i-1))
+    for i, j, dist in fares:
+        graph[i-1].append((dist, j-1))
+        graph[j-1].append((dist, i-1))
     
     for i in range(n):
         answer = min(answer, dijkstra(graph, s-1, i) + dijkstra(graph, i, a-1) + dijkstra(graph, i, b-1))
