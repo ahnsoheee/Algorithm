@@ -13,7 +13,7 @@
 5. return D  
 
 
-#### 우선순위 큐를 활용한 코드
+#### 우선순위 큐 + 딕셔너리를 활용한 코드
 
 ```python
 import heapq
@@ -37,4 +37,35 @@ def dijkstra(graph, s):
                 heapq.heappush(queue, [distance, next_d])
         
     return distances
+```
+
+#### 우선순위 큐 + 리스트를 활용한 코드
+- start부터 end까지의 최소 거리 반환
+
+```python
+
+import heapq
+
+INF = int(1e9) 
+
+def dijkstra(graph, start, end):
+    distances = [INF] * len(graph)
+    distances[start] = 0
+    queue = []
+    heapq.heappush(queue, (0, start))
+
+    while queue:
+        curr_d, curr_node = heapq.heappop(queue)
+
+        if distances[curr_node] < curr_d: continue
+
+        for next_d, next_node in graph[curr_node]:
+            distance = curr_d + next_d
+
+            if distance < distances[next_node]:
+                distances[next_node] = distance
+                heapq.heappush(queue, (distance, next_node))
+        
+    return distances[end]
+
 ```
