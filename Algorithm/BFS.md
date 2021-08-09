@@ -1,7 +1,8 @@
 ## BFS (Breadth First Search, 너비 우선 탐색)
 #### 시작 정점으로부터 거리가 가까운 정점 순(너비 우선)으로 인접한 노드를 탐색하는 알고리즘
 
-![캡처](https://user-images.githubusercontent.com/61968474/128665260-5d3a0f5c-6bf8-408b-9dfb-563b23afde10.PNG)
+<img width="250" alt="스크린샷 2021-01-13 오후 1 36 42" src="https://user-images.githubusercontent.com/61968474/128665260-5d3a0f5c-6bf8-408b-9dfb-563b23afde10.PNG">
+
 
 ### 특징
 - **최단 경로를 찾을 때** 사용
