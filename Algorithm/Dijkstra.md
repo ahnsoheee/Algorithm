@@ -39,7 +39,8 @@ def dijkstra(graph, s):
     return distances
 ```
 
-#### 우선순위 큐 + 리스트를 활용한 코드
+#### 우선순위 큐 + 리스트를 활용한 코드 - Python
+
 - start부터 end까지의 최소 거리 반환
 
 ```python
