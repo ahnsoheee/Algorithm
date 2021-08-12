@@ -4,6 +4,7 @@
 - 선행조건 : 배열이 정렬되어 있어야 한다.
 - 시간복잡도 : O(logN)
 
+#### Python 구현 코드
 ```python
 def lower_bound(data, target):
 
