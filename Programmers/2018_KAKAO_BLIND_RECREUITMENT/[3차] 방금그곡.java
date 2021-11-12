@@ -10,16 +10,15 @@ class Solution {
             String[] end = info[1].split(":");
             int time = (Integer.parseInt(end[0]) - Integer.parseInt(start[0])) * 60 + Integer.parseInt(end[1]) - Integer.parseInt(start[1]);
             
-            String replaced_code = replace(info[3]);
+            String replaced_code = replace_code(info[3]);
             String code = "";
             
             for (int i = 0; i < time / replaced_code.length(); i++)
                 code += replaced_code;
             
             code += replaced_code.substring(0, time % replaced_code.length());
-            System.out.println(code);
             
-            if (code.contains(replace(m))) {
+            if (code.contains(replace_code(m))) {
                 if (max < time) {
                     max = time;
                     answer = info[2];
@@ -33,7 +32,7 @@ class Solution {
         return answer;
     }
     
-    public String replace(String code) {
+    public String replace_code(String code) {
         code = code.replaceAll("C#", "c");
         code = code.replaceAll("D#", "d");
         code = code.replaceAll("F#", "f");
