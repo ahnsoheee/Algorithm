@@ -1,20 +1,8 @@
-def replace_code(code):
-    code = code.replace('C#', 'c')
-    code = code.replace('D#', 'd')
-    code = code.replace('F#', 'f')
-    code = code.replace('G#', 'g')
-    code = code.replace('A#', 'a')
-
-    return code
-
-
 def solution(m, musicinfos):
     answer = ''
     result = []
-    idx = 0
 
     for musicinfo in musicinfos:
-        idx += 1
         info = musicinfo.split(',')
         start = info[0].split(':')
         end = info[1].split(':')
@@ -25,7 +13,7 @@ def solution(m, musicinfos):
         code = code * (time // len(code)) + code[:time % len(code)]
 
         if replace_code(m) in code:
-            result.append([info[2], time, idx])
+            result.append([info[2], time])
 
     if len(result) == 1:
         return result[0][0]
@@ -35,5 +23,15 @@ def solution(m, musicinfos):
 
     else:
         print(result)
-        result = sorted(result, key=lambda x: (-x[1], x[2]))
+        result = sorted(result, key=lambda x: (-x[1]))
         return result[0][0]
+
+
+def replace_code(code):
+    code = code.replace('C#', 'c')
+    code = code.replace('D#', 'd')
+    code = code.replace('F#', 'f')
+    code = code.replace('G#', 'g')
+    code = code.replace('A#', 'a')
+
+    return code
