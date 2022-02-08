@@ -36,17 +36,14 @@ def solution(m, n, board):
             return answer
         
         popList = sorted(list(set(popList)), reverse=True)
-
-        # 블록 지우기
         for x, y in popList:
             answer += 1
             board[x][y] = '-'
 
-        # 블록 내리기
         for x, y in popList:
-            for i in range(m-1, -1, -1):
+            for i in range(x, -1, -1):
                 if board[i][y] == '-':
-                    for j in range(i, -1, -1):
+                    for j in range(i-1, -1, -1):
                         if board[j][y] != '-':
                             board[i][y] = board[j][y]
                             board[j][y] = '-'
